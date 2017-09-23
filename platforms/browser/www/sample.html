@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	
+	<link rel="stylesheet" href="drawer/src/css/touch-menu-la.css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="drawer/src/css/sample.css">
+
+</head>
+
+<body>
+	<header>
+		<i class="material-icons" id="menu-open">menu</i>
+		<span class="title">Share Your Offer</span>
+	</header>
+
+	<div class="center-icon">
+		<div class="col-xs-12" style="padding-top:10%;font-size:100px">
+			<span class="glyphicon glyphicon-tree-deciduous"></span>
+		</div>
+		<div class="col-xs-12" style="padding-top:5%;">
+			<h1>Welcome to</h1>
+			<h1>Share Your Offer</h1>
+			<h5>See what people sharing here</h5>
+		</div>
+
+		<div class="col-xs-12" style="padding-top:30px">
+			<div class="col-xs-12" style="padding:2px">
+				<button type="submit" class="btn btn-xl btn-primary btn-round col-xs-6"><b>Sign Up</b></button>
+			</div>
+			<div class="col-xs-12" style="padding:2px">
+				<button type="submit" class="btn btn-xl btn-primary btn-round col-xs-6"><b>Log In</b></button>
+			</div>
+		</div>
+	</div>
+
+	<div id="menu" class="touch-menu-la">
+		<div class="inner-header">
+			Share Your Offer
+		</div>
+	</div>
+
+	<script src="drawer/lib/hammerjs/hammer.min.js"></script>
+	<script src="drawer/src/js/touch-menu-la.js"></script>
+	<script>
+		var TouchMenu = TouchMenuLA({
+			target: document.getElementById('menu')
+		});
+
+		document.getElementById('menu-open').addEventListener('click', function(){
+			// TouchMenu.toggle(); 
+			let myLocation='Latitude: '  + position.coords.latitude      + '<br />' +
+                            'Longitude: ' + position.coords.longitude     + '<br />';
+							alert(myLocation);
+		});
+	</script>
+</body>
+
+</html>

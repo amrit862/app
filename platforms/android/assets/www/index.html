@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+	
+	<!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="msapplication-tap-highlight" content="no">
+	<link rel="stylesheet" href="md/material.min.css">
+	<script src="md/material.min.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">-->
+
+	<link rel="stylesheet" href="bs/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/custom.css">
+
+	<link rel="stylesheet" href="drawer/src/css/touch-menu-la.css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="drawer/src/css/sample.css">
+
+</head>
+
+<body style="background-color:#42b3f4;color:white">
+	<header>
+		<i class="fa fa-bars" aria-hidden="true" id="menu-open"></i>
+		<span class="title">Menu</span>
+	</header>
+
+	<div id="menu" class="touch-menu-la">
+		<div class="inner-header">
+			Share Your Offer
+		</div>
+	</div>
+
+	<div class="">
+		<div class="col-xs-12" style="padding-top:10%;font-size:100px">
+			<span class="glyphicon glyphicon-tree-deciduous"></span>
+		</div>
+		<div class="col-xs-12" style="padding-top:5%;">
+			<h1>Welcome to</h1>
+			<h1>Share Your Offer</h1>
+			<h5>See what people sharing here</h5>
+		</div>
+
+		<div class="col-xs-12" style="padding-top:30px">
+			<div class="col-xs-12" style="padding:2px">
+				<button type="submit" class="btn btn-xl btn-primary btn-round col-xs-6"><b>Sign Up</b></button>
+			</div>
+			<div class="col-xs-12" style="padding:2px">
+				<button type="submit" class="btn btn-xl btn-primary btn-round col-xs-6"><b>Log In</b></button>
+			</div>
+			<div id="geolocation">
+
+			</div>
+		</div>
+	</div>
+
+	
+
+	<script src="drawer/lib/hammerjs/hammer.min.js"></script>
+	<script src="drawer/src/js/touch-menu-la.js"></script>
+	<script>
+		var TouchMenu = TouchMenuLA({
+			target: document.getElementById('menu')
+		});
+
+		document.getElementById('menu-open').addEventListener('click', function(){
+			TouchMenu.toggle();
+			var element = document.getElementById('geolocation');
+			element.innerHTML = 'Latitude: '  + position.coords.latitude      + '<br />' +
+								'Longitude: ' + position.coords.longitude     + '<br />' +
+								'<hr />'      + element.innerHTML;
+		});
+	</script>
+</body>
+
+</html>

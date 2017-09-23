@@ -1,0 +1,11 @@
+{
+    "android":{
+        "release":{
+            "keystore":"app-key.keystore",
+            "storePassword":"rishabhjn862",
+            "alias":"app-key",
+            "password":"rishabhjn862",
+            "keystoreType":""
+        }
+    }
+}
